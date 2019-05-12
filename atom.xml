@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="ketejun.github.io/"/>
-  <updated>2019-05-10T14:09:45.780Z</updated>
+  <updated>2019-05-12T14:43:28.293Z</updated>
   <id>ketejun.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>box-sizing,transition和translate分别是什么</title>
+    <link href="ketejun.github.io/2019/05/12/box-sizing-transition-translate/"/>
+    <id>ketejun.github.io/2019/05/12/box-sizing-transition-translate/</id>
+    <published>2019-05-12T14:38:06.000Z</published>
+    <updated>2019-05-12T14:43:28.293Z</updated>
+    
+    <content type="html"><![CDATA[<p><em>1、box-sizing:用来指定模型的大小的计算方式。主要分为border-box(从边框固定盒子大小)、content-box(从内容固定盒子大小)两种计算方式。</em></p><p><em>2、transition:当前元素只要有”属性”发生变化时，可以平滑的进行过渡。通过transition-propety设置过渡属性；transition-duration设置过渡时间；transition-timing-function设置过渡速度；transition-delay设置过渡延时。</em></p><p><em>3、translate：通过移动改变元素的位置；有x,y,z三个属性</em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;em&gt;1、box-sizing:用来指定模型的大小的计算方式。主要分为border-box(从边框固定盒子大小)、content-box(从内容固定盒子大小)两种计算方式。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2、transition:当前元素只要有”属性”发生变化时，可以平
+      
+    
+    </summary>
+    
+    
+      <category term="box-sizing" scheme="ketejun.github.io/tags/box-sizing/"/>
+    
+      <category term="transition" scheme="ketejun.github.io/tags/transition/"/>
+    
+      <category term="translate" scheme="ketejun.github.io/tags/translate/"/>
+    
+  </entry>
   
   <entry>
     <title>ajax初体验</title>
