@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="ketejun.github.io/"/>
-  <updated>2019-05-19T16:12:13.500Z</updated>
+  <updated>2019-05-26T15:41:00.587Z</updated>
   <id>ketejun.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue小组件</title>
+    <link href="ketejun.github.io/2019/05/26/%E5%B0%8F%E7%BB%84%E4%BB%B6/"/>
+    <id>ketejun.github.io/2019/05/26/小组件/</id>
+    <published>2019-05-26T15:29:08.000Z</published>
+    <updated>2019-05-26T15:41:00.587Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- html --&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;book-item v-for=&quot;item in books&quot; v-bind:book=&quot;item&quot;&gt;&lt;/book-item&gt;</span><br><span class="line">&lt;/ol&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">//组件定义：book-item</span><br><span class="line">Vue.component(&apos;book-item&apos;,&#123;</span><br><span class="line">props: [&apos;book&apos;],</span><br><span class="line">template: &apos;&lt;li&gt;&#123;&#123;book.title&#125;&#125;&lt;/li&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//Vue对象实例化</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">el: &apos;#app&apos;,</span><br><span class="line">data: &#123;</span><br><span class="line">books: [</span><br><span class="line">&#123;title: &apos;javascript&apos;&#125;,</span><br><span class="line">&#123;title: &apos;Vue.js&apos;&#125;,</span><br><span class="line">&#123;title: &apos;node.js&apos;&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>煎熬</title>
