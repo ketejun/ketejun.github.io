@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="ketejun.github.io/"/>
-  <updated>2019-05-26T15:41:00.587Z</updated>
+  <updated>2019-06-01T16:45:25.104Z</updated>
   <id>ketejun.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>再接再厉，继续修炼</title>
+    <link href="ketejun.github.io/2019/06/02/xiuxing/"/>
+    <id>ketejun.github.io/2019/06/02/xiuxing/</id>
+    <published>2019-06-01T16:39:34.000Z</published>
+    <updated>2019-06-01T16:45:25.104Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>最近受到了严重打击，能力太弱，身心疲惫，得继续抓紧提高能力层次，从量变向质变转化，循循渐进，再接再厉，ES6,Vue.js and iView 我干死你！</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;最近受到了严重打击，能力太弱，身心疲惫，得继续抓紧提高能力层次，从量变向质变转化，循循渐进，再接再厉，ES6,Vue.js and iView 我干死你！&lt;/strong&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>vue小组件</title>
