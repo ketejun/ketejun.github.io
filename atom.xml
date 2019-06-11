@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="ketejun.github.io/"/>
-  <updated>2019-06-01T16:45:25.104Z</updated>
+  <updated>2019-06-11T13:47:12.646Z</updated>
   <id>ketejun.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>breathe</title>
+    <link href="ketejun.github.io/2019/06/11/breathe/"/>
+    <id>ketejun.github.io/2019/06/11/breathe/</id>
+    <published>2019-06-11T13:36:41.000Z</published>
+    <updated>2019-06-11T13:47:12.646Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>今天无意间用到了呼吸灯效果样式：</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/breathe.png" alt title>                </div>                <div class="image-caption"></div>            </figure><p>css:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">.breathBox &#123;</span><br><span class="line">width: 200px;</span><br><span class="line">height: 200px;</span><br><span class="line">border: 1px solid #2b92d4;</span><br><span class="line">border-radius: 50%;</span><br><span class="line">text-align: center;</span><br><span class="line">margin: 100px auto;</span><br><span class="line">box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);</span><br><span class="line">overflow: hidden;</span><br><span class="line">animation-timing-function: ease-in-out;</span><br><span class="line">animation-name: breathe;</span><br><span class="line">animation-duration: 1500ms;</span><br><span class="line">animation-iteration-count: infinite;</span><br><span class="line">animation-direction: alternate;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes breathe &#123;</span><br><span class="line">0% &#123;</span><br><span class="line">opacity: 0.4;</span><br><span class="line">box-shadow: 0 1px 2px rgba(0, 147,223,0.4), 0 1px 1px rgba(0, 147, 223, 0.1) inset;</span><br><span class="line">&#125;</span><br><span class="line">100% &#123;</span><br><span class="line">opacity: 1;</span><br><span class="line">border: 1px solid rgba(59, 235, 235, 0.7);</span><br><span class="line">box-shadow: 0 1px 30px #0093df, 0 1px 20px #0093df inset;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>html:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;breathBox&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;今天无意间用到了呼吸灯效果样式：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div c
+      
+    
+    </summary>
+    
+    
+      <category term="html5" scheme="ketejun.github.io/tags/html5/"/>
+    
+      <category term="css3" scheme="ketejun.github.io/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>呼吸灯效果</title>
+    <link href="ketejun.github.io/2019/06/11/%E5%91%BC%E5%90%B8%E7%81%AF%E6%95%88%E6%9E%9C-1/"/>
+    <id>ketejun.github.io/2019/06/11/呼吸灯效果-1/</id>
+    <published>2019-06-11T13:33:56.000Z</published>
+    <updated>2019-06-11T13:37:01.548Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>再接再厉，继续修炼</title>
