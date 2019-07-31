@@ -14,24 +14,26 @@
     
     
     
-    <title>Git入门指南 | 科特君Blog</title>
+    <title>vue生命周期钩子 | 科特君Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content>
-    <meta name="description" content="介绍Git 从入门到放弃 基本使用123456好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上">
+    <meta name="description" content="什么是生命周期钩子？ 从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件这些事件，统称为生命周期。                                                                                                             主要的生命周期函数分类：1.创建期间的生命周期函数：     before">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git入门指南">
-<meta property="og:url" content="ketejun.github.io/2019/04/28/Git入门指南/index.html">
+<meta property="og:title" content="vue生命周期钩子">
+<meta property="og:url" content="ketejun.github.io/2019/07/31/vueLifeCylce/index.html">
 <meta property="og:site_name" content="科特君Blog">
-<meta property="og:description" content="介绍Git 从入门到放弃 基本使用123456好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上">
+<meta property="og:description" content="什么是生命周期钩子？ 从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件这些事件，统称为生命周期。                                                                                                             主要的生命周期函数分类：1.创建期间的生命周期函数：     before">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-04-28T14:45:15.655Z">
+<meta property="og:image" content="/images/lifecycle.png">
+<meta property="og:updated_time" content="2019-07-31T06:41:49.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git入门指南">
-<meta name="twitter:description" content="介绍Git 从入门到放弃 基本使用123456好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上好好学习，天天向上">
+<meta name="twitter:title" content="vue生命周期钩子">
+<meta name="twitter:description" content="什么是生命周期钩子？ 从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件这些事件，统称为生命周期。                                                                                                             主要的生命周期函数分类：1.创建期间的生命周期函数：     before">
+<meta name="twitter:image" content="/images/lifecycle.png">
     
         <link rel="alternate" type="application/atom+xml" title="科特君Blog" href="/atom.xml">
     
@@ -119,7 +121,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Git入门指南</div>
+        <div class="flex-col header-title ellipsis">vue生命周期钩子</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,11 +143,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Git入门指南</h1>
+        <h1 class="title">vue生命周期钩子</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-04-28T14:16:59.000Z" itemprop="datePublished" class="page-time">
-  2019-04-28
+                <time datetime="2019-07-31T03:29:03.000Z" itemprop="datePublished" class="page-time">
+  2019-07-31
 </time>
 
 
@@ -164,17 +166,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本使用</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是生命周期钩子？"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是生命周期钩子？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要的生命周期函数分类："><span class="post-toc-number">2.</span> <span class="post-toc-text">主要的生命周期函数分类：</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-Git入门指南" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-vueLifeCylce" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Git入门指南</h1>
+        <h1 class="post-card-title">vue生命周期钩子</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-04-28 22:16:59" datetime="2019-04-28T14:16:59.000Z" itemprop="datePublished">2019-04-28</time>
+            <time class="post-time" title="2019-07-31 11:29:03" datetime="2019-07-31T03:29:03.000Z" itemprop="datePublished">2019-07-31</time>
 
             
 
@@ -187,8 +189,28 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Git 从入门到放弃</p>
-<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">好好学习，天天向上</span><br><span class="line">好好学习，天天向上</span><br><span class="line">好好学习，天天向上</span><br><span class="line">好好学习，天天向上</span><br><span class="line">好好学习，天天向上</span><br><span class="line">好好学习，天天向上</span><br></pre></td></tr></table></figure>
+            <h2 id="什么是生命周期钩子？"><a href="#什么是生命周期钩子？" class="headerlink" title="什么是生命周期钩子？"></a>什么是生命周期钩子？</h2><ul>
+<li>从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件这些事件，统称为生命周期。</li>
+</ul>
+<p><div align="center"><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/lifecycle.png" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></div></p>
+<h2 id="主要的生命周期函数分类："><a href="#主要的生命周期函数分类：" class="headerlink" title="主要的生命周期函数分类："></a>主要的生命周期函数分类：</h2><pre><code>1.创建期间的生命周期函数：
+    beforeCreate:实例刚在内存中被创建出来，此时，还没有初始化好data和methods属性。
+    created:实例已经在内存中创建OK,此时data和methods已经创建OK，此时还没有开始编译模板。
+    beforeMount:此时已经完成了模板的编译，但是还没有挂载到页面中。
+    mounted:此时，已经将编译好的模板，挂载到了页面指定的容器中显示。
+2.运行期间的生命周期函数：
+    beforeUpdate:状态更新之前执行此函数，此时data中的状态值是最新的，但是界面上显示的数据还是旧的，因为此时还没有开始重新渲染DOM节点。
+    updated:实例更新完毕之后调用此函数，此时data中的状态值和界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了。
+3.销毁期间的生命周期函数：
+    beforeDestroy:实例销毁之前调用。在这一步，实例仍然完全可用。
+    destroyed:Vue实例销毁后调用。调用后，Vue实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
+</code></pre>
         </div>
 
         <blockquote class="post-copyright">
@@ -196,7 +218,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-28T14:45:15.655Z" itemprop="dateUpdated">2019-04-28 22:45:15</time>
+    Last updated: <time datetime="2019-07-31T06:41:49.408Z" itemprop="dateUpdated">2019-07-31 14:41:49</time>
 </span><br>
 
 
@@ -228,7 +250,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=ketejun.github.io/2019/04/28/Git入门指南/&title=《Git入门指南》 — 科特君Blog&pic=ketejun.github.io/img/touxiang.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=ketejun.github.io/2019/07/31/vueLifeCylce/&title=《vue生命周期钩子》 — 科特君Blog&pic=ketejun.github.io/img/touxiang.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -238,22 +260,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=ketejun.github.io/2019/04/28/Git入门指南/&title=《Git入门指南》 — 科特君Blog&source=年少无为 蹉跎岁月 王者意识 青铜操作" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=ketejun.github.io/2019/07/31/vueLifeCylce/&title=《vue生命周期钩子》 — 科特君Blog&source=年少无为 蹉跎岁月 王者意识 青铜操作" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=ketejun.github.io/2019/04/28/Git入门指南/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=ketejun.github.io/2019/07/31/vueLifeCylce/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git入门指南》 — 科特君Blog&url=ketejun.github.io/2019/04/28/Git入门指南/&via=ketejun.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue生命周期钩子》 — 科特君Blog&url=ketejun.github.io/2019/07/31/vueLifeCylce/&via=ketejun.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=ketejun.github.io/2019/04/28/Git入门指南/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=ketejun.github.io/2019/07/31/vueLifeCylce/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -273,16 +295,16 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/04/28/Test/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">技术篇</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/11/breathe/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">breathe</h4>
+      </a>
+    </div>
   
 </nav>
 
@@ -370,7 +392,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=ketejun.github.io/2019/04/28/Git入门指南/&title=《Git入门指南》 — 科特君Blog&pic=ketejun.github.io/img/touxiang.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=ketejun.github.io/2019/07/31/vueLifeCylce/&title=《vue生命周期钩子》 — 科特君Blog&pic=ketejun.github.io/img/touxiang.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -380,22 +402,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=ketejun.github.io/2019/04/28/Git入门指南/&title=《Git入门指南》 — 科特君Blog&source=年少无为 蹉跎岁月 王者意识 青铜操作" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=ketejun.github.io/2019/07/31/vueLifeCylce/&title=《vue生命周期钩子》 — 科特君Blog&source=年少无为 蹉跎岁月 王者意识 青铜操作" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=ketejun.github.io/2019/04/28/Git入门指南/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=ketejun.github.io/2019/07/31/vueLifeCylce/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git入门指南》 — 科特君Blog&url=ketejun.github.io/2019/04/28/Git入门指南/&via=ketejun.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue生命周期钩子》 — 科特君Blog&url=ketejun.github.io/2019/07/31/vueLifeCylce/&via=ketejun.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=ketejun.github.io/2019/04/28/Git入门指南/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=ketejun.github.io/2019/07/31/vueLifeCylce/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -406,7 +428,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQW4CMQwFUO5/aSp1Vakw/d+Bqk1eVoiBmbxZWLbj2y1e98/19fP3b5Lf57+8vWNhYGD8W8b9cl1vJd/cs6v5/a9fBwYGxgmMNsjOfj8L1tfPwsDAwJhtsb2aIzEwMDBmgW+WLM7SSgwMjJMZSRG7Uvq293ljLY6BgfEPGbODgd/5/PbzDQwMjD/PuJcrLzjbsJgH2Qe7wsDA2JqRHB/O4luSCOZtuOs7YGBgnMCYDYHlIxT5Nys8DAyMXRl5YpdsaCXta0kPkkIMDIzDGG3iuH6EkCeOD56FgYFxACMftmibbq8ayPihiMXAwDiMkZedySt4cfvs2YvGwMDYmrGS/K2Pha0fCWBgYJzASB6fHwO0E1xRGE2ehYGBsTUjLzvbTbQbfcGJJAYGxqaMtln/qgGyPHFM7o+BgbE3I/9z3spv09A2KXz6FAwMjE0ZbTDNGbPkb1haY2BgHMDIBy/aFLD9Vz6i8UNSiIGBsRGj3VDOK7p9eZmaX8XAwNiI0TbC8hK0LXeX2nwYGBiHMWat/Lbpv36ciYGBcQ6jvWl79DhLJdvKFAMDY2/GvVyzMbIWUBfPGBgYWzPyNRuzSEJzOxyWB3cMDIydGG35unKcmQ9q1IUxBgbGAYy81dVG7lm62YZvDAwMjLakzEe42sELDAwMjHa0a2X8az1lxMDAOI3RFrF5AM2ba+2YBQYGxjmM9mBgvSWX33k2TIaBgbER4wNOB4Sai1pxCAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABv0lEQVR42u3aO27EMAwFQN//0g6QLoW1j9RnjWBULdayMHJBUKSuKx7370jmrJ3ZHLi4uNPcezieuL2n4/XHBlxc3PPccfC6gzH+BONAlhhwcXHfyc1BSWKEi4v7P7hJApQfaXBxcd/PTUDVjY3f3X5Ww8XFneDOBJ1VvzfWd3FxcYvcuziS0sY42FVLLX/ewsXFPcJNGiHj/3utlzwxunIELi7uUu4qUB7gkoMNLi7ut7hrS5+9cmqhbIqLi3uQWw1AvYJpL915PPbg4uJu4yYhqbfoqvbJBzQuLu42bp6grDoOVa93NPMpXFzcFnftdas8NekVSnBxcc9w5y9ezJRQV20eFxd3LXdf42TVTarHgikuLu5Bbq9dWk2bqk9xcXFPcqsXs/IEaH4+Li7ut7gLwsqiskjhHIaLi3uE2yteJNubJz5mZLi4uJu5M2WL/IBU3V4h7uLi4i7l7sgukgLoqiYNLi7uPm4SvPJAlgep5gq4uLgHudXglRRWxms25+Di4r6Mm2+jekWjUFTFxcV9JTdZtBcco3VwcXEPcqsN1+T/XvP1w8fCxcU9wq0WTAtt0WKzNi/K4OLibuP+AE6d5x7bYTOwAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
