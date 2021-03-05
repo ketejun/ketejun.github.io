@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>如何在Linux服务器上安装Anaconda及其操作 | 科特君Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Linux,Anaconda,conda">
+    <meta name="description" content="第一部：anaconda的安装1. 首先在Linux上下载anaconda的安装包，选择适合自己系统和想要的版本：https://repo.anaconda.com/archive/, 或者自己在电脑上把已经下载好的anaconda通过FTP上传到到服务器上。 1Wget https://repo.anaconda.com/archive/Anconda3.-5.3.0-Linux-x86_64.">
+<meta name="keywords" content="Linux,Anaconda,conda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在Linux服务器上安装Anaconda及其操作">
+<meta property="og:url" content="ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/index.html">
+<meta property="og:site_name" content="科特君Blog">
+<meta property="og:description" content="第一部：anaconda的安装1. 首先在Linux上下载anaconda的安装包，选择适合自己系统和想要的版本：https://repo.anaconda.com/archive/, 或者自己在电脑上把已经下载好的anaconda通过FTP上传到到服务器上。 1Wget https://repo.anaconda.com/archive/Anconda3.-5.3.0-Linux-x86_64.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210305200235539.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210305201256136.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210305203136292.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210305203327767.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210305203418734.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210305203609750.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2021030520380778.png#pic_center">
+<meta property="og:updated_time" content="2021-03-05T13:48:15.032Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何在Linux服务器上安装Anaconda及其操作">
+<meta name="twitter:description" content="第一部：anaconda的安装1. 首先在Linux上下载anaconda的安装包，选择适合自己系统和想要的版本：https://repo.anaconda.com/archive/, 或者自己在电脑上把已经下载好的anaconda通过FTP上传到到服务器上。 1Wget https://repo.anaconda.com/archive/Anconda3.-5.3.0-Linux-x86_64.">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210305200235539.png#pic_center">
+    
+        <link rel="alternate" type="application/atom+xml" title="科特君Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/touxiang.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">KETE</h5>
+          <a href="mailto:1442894012@qq.com" title="1442894012@qq.com" class="mail">1442894012@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ketejun" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/p/1005051852768543/home" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">如何在Linux服务器上安装Anaconda及其操作</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">如何在Linux服务器上安装Anaconda及其操作</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-03-05T13:33:56.000Z" itemprop="datePublished" class="page-time">
+  2021-03-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一部：anaconda的安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一部：anaconda的安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-首先在Linux上下载anaconda的安装包，"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. 首先在Linux上下载anaconda的安装包，</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-安装anaconda"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 安装anaconda</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-按enter"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3. 按enter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-输入yes"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4. 输入yes</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-继续按enter"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">5. 继续按enter</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-输入yes，添加环境变量"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">6. 输入yes，添加环境变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-完成安装"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">7. 完成安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-检测是否安装成功"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">8. 检测是否安装成功</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二部分：conda的使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二部分：conda的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建虚拟环境"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">创建虚拟环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#激活虚拟环境"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">激活虚拟环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#退出虚拟环境"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">退出虚拟环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除虚拟环境"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">删除虚拟环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#conda一些常用命令"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">conda一些常用命令</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-如何在Linux服务器上安装Anaconda及其操作" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">如何在Linux服务器上安装Anaconda及其操作</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-03-05 21:33:56" datetime="2021-03-05T13:33:56.000Z" itemprop="datePublished">2021-03-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="第一部：anaconda的安装"><a href="#第一部：anaconda的安装" class="headerlink" title="第一部：anaconda的安装"></a>第一部：anaconda的安装</h1><h2 id="1-首先在Linux上下载anaconda的安装包，"><a href="#1-首先在Linux上下载anaconda的安装包，" class="headerlink" title="1. 首先在Linux上下载anaconda的安装包，"></a>1. 首先在Linux上下载anaconda的安装包，</h2><p>选择适合自己系统和想要的版本：<a href="https://repo.anaconda.com/archive/" target="_blank" rel="noopener">https://repo.anaconda.com/archive/</a>, 或者自己在电脑上把已经下载好的anaconda通过FTP上传到到服务器上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wget https://repo.anaconda.com/archive/Anconda3.-5.3.0-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20210305200235539.png#pic_center" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="2-安装anaconda"><a href="#2-安装anaconda" class="headerlink" title="2. 安装anaconda"></a>2. 安装anaconda</h2><p>首先赋权再执行安装程序:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod +x Anaconda3-5.1.0-Linux-x86_64.sh</span><br><span class="line">./Anaconda3-5.1.0-Linux-x86_64.sh</span><br></pre></td></tr></table></figure></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20210305201256136.png#pic_center" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="3-按enter"><a href="#3-按enter" class="headerlink" title="3. 按enter"></a>3. 按enter</h2><p>此时显示Anaconda的信息，并且会出现More，继续按Enter，直到如下图所示:<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20210305203136292.png#pic_center" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="4-输入yes"><a href="#4-输入yes" class="headerlink" title="4. 输入yes"></a>4. 输入yes</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20210305203327767.png#pic_center" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="5-继续按enter"><a href="#5-继续按enter" class="headerlink" title="5. 继续按enter"></a>5. 继续按enter</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20210305203418734.png#pic_center" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="6-输入yes，添加环境变量"><a href="#6-输入yes，添加环境变量" class="headerlink" title="6. 输入yes，添加环境变量"></a>6. 输入yes，添加环境变量</h2><p>installation finished显示安装完成，接下来会提示是否添加环境变量，输入yes，否则还得自己配环境变量<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/20210305203609750.png#pic_center" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h2 id="7-完成安装"><a href="#7-完成安装" class="headerlink" title="7. 完成安装"></a>7. 完成安装</h2><p>到此，已经完成，但是有提示For this change to become active,you have to open a new terminal（需要打开一个新的终端，才会生效）。将此终端关闭，重新打开即可。</p>
+<h2 id="8-检测是否安装成功"><a href="#8-检测是否安装成功" class="headerlink" title="8. 检测是否安装成功"></a>8. 检测是否安装成功</h2><p>打开新的终端后，进入自己的文件夹目录下，输入anaconda -V（注意a要小写，V要大写），conda -V  ,显示版本信息，若显示则表示安装成功。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://img-blog.csdnimg.cn/2021030520380778.png#pic_center" alt title>
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1 id="第二部分：conda的使用"><a href="#第二部分：conda的使用" class="headerlink" title="第二部分：conda的使用"></a>第二部分：conda的使用</h1><h2 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h2><p>使用 conda create -n your_env_name python=X.X（2.7、3.7等），anaconda 命令创建python版本为X.X、名字为your_env_name的虚拟环境。your_env_name文件可以在Anaconda安装目录envs文件下找到。 指定python版本为2.7，注意至少需要指定python版本或者要安装的包，在不指定python版本时，自动安装最新python版本。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n your_env_name python=3.7    //your_env_name为虚拟环境名</span><br></pre></td></tr></table></figure></p>
+<p>也可以同时安装必要的包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n your_env_name numpy matplotlib python=3.7</span><br></pre></td></tr></table></figure></p>
+<h2 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h2><p>使用如下命令即可激活创建的虚拟环境<br>Linux:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source deactivate your_env_name</span><br></pre></td></tr></table></figure></p>
+<p>Windows:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate your_env_name</span><br></pre></td></tr></table></figure></p>
+<h2 id="退出虚拟环境"><a href="#退出虚拟环境" class="headerlink" title="退出虚拟环境"></a>退出虚拟环境</h2><p>Linux:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source deactivate your_env_name</span><br></pre></td></tr></table></figure></p>
+<p>Windows:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate your_env_name</span><br></pre></td></tr></table></figure></p>
+<h2 id="删除虚拟环境"><a href="#删除虚拟环境" class="headerlink" title="删除虚拟环境"></a>删除虚拟环境</h2><p>删除环境：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n your_env_name  --all</span><br></pre></td></tr></table></figure></p>
+<p>删除虚拟环境中的包:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove --name $your_env_name  $package_name</span><br></pre></td></tr></table></figure></p>
+<h2 id="conda一些常用命令"><a href="#conda一些常用命令" class="headerlink" title="conda一些常用命令"></a>conda一些常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">#列出所有已安装的包</span><br><span class="line">conda list</span><br><span class="line">#安装软件包，同时它会自动安装此软件包的依赖项 </span><br><span class="line">conda install package_name</span><br><span class="line">#同时安装多个包</span><br><span class="line">conda install numpy pandas</span><br><span class="line">#安装指定版本的包</span><br><span class="line">conda install python=2.7</span><br><span class="line">#安装离线包</span><br><span class="line">conda install /package-path/package-filename.tar.bz2</span><br><span class="line">#卸载包</span><br><span class="line">conda remove package_name</span><br><span class="line">#更新环境中的所有已安装的包</span><br><span class="line">conda update/upgrade --all</span><br><span class="line">#更新conda，保持conda最新</span><br><span class="line">conda update conda</span><br><span class="line">#更新anaconda</span><br><span class="line">conda update anaconda</span><br><span class="line">#更新python</span><br><span class="line">conda update python</span><br><span class="line">#查看conda安装信息</span><br><span class="line">conda info</span><br><span class="line">#查看conda帮助</span><br><span class="line">conda help</span><br><span class="line">#搜索可以安装的包</span><br><span class="line">conda search package_name</span><br><span class="line">#创建conda虚拟环境</span><br><span class="line">conda create -n env_name</span><br><span class="line">#在这里，-n env_name 设置环境的名称（-n 是指名称），而 list of packages 是要安装在环境中的包的列表</span><br><span class="line">conda create -n env_name list of packages</span><br><span class="line">#可以创建具有特定 Python 版本的环境</span><br><span class="line">conda create -n py2.7.14 python=2.7.14</span><br><span class="line">#查看conda版本</span><br><span class="line">conda -V</span><br><span class="line"></span><br><span class="line">#进入环境</span><br><span class="line">#linux 下用 </span><br><span class="line">source activate env_name</span><br><span class="line">#windows 下用</span><br><span class="line">activate env_name</span><br><span class="line"></span><br><span class="line">#离开环境</span><br><span class="line">#linux 下用 </span><br><span class="line">source deactivate</span><br><span class="line">#windows 下用</span><br><span class="line">deactivate</span><br><span class="line"></span><br><span class="line">#列出环境</span><br><span class="line">conda env list</span><br><span class="line">#删除环境</span><br><span class="line">conda env remove -n env_name</span><br><span class="line">#导出环境将包保存为 YAML，输出环境中的所有包的名称（包括 Python 版本）</span><br><span class="line">conda env export &gt; environment.yaml</span><br><span class="line">#加载环境</span><br><span class="line">conda env create -f environment.yaml</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2021-03-05T13:48:15.032Z" itemprop="dateUpdated">2021-03-05 21:48:15</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="ketejun.github.io">
+            <img src="/img/touxiang.jpg" alt="KETE">
+            KETE
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anaconda/">Anaconda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/conda/">conda</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/&title=《如何在Linux服务器上安装Anaconda及其操作》 — 科特君Blog&pic=ketejun.github.io/img/touxiang.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/&title=《如何在Linux服务器上安装Anaconda及其操作》 — 科特君Blog&source=年少无为 蹉跎岁月 王者意识 青铜操作" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《如何在Linux服务器上安装Anaconda及其操作》 — 科特君Blog&url=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/&via=ketejun.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/12/11/DeepLearning/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">什么是深度学习（DeepLearning）？</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>KETE &copy; 2019 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/&title=《如何在Linux服务器上安装Anaconda及其操作》 — 科特君Blog&pic=ketejun.github.io/img/touxiang.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/&title=《如何在Linux服务器上安装Anaconda及其操作》 — 科特君Blog&source=年少无为 蹉跎岁月 王者意识 青铜操作" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《如何在Linux服务器上安装Anaconda及其操作》 — 科特君Blog&url=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/&via=ketejun.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=ketejun.github.io/2021/03/05/如何在Linux服务器上安装Anaconda及其操作/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3awW4iMRAE0Pz/TyfXlRLYqm6bEOnNCYEwfnMYN9X98RFfn/9cyafP3/n+/qPXjz49fOHh4eEttv58E4+Qyaafrza7Ec/XwcPDw7vNe/REzZfOV2uPn9Wv4OHh4b0BL//u7MBo18HDw8N7f15SXs8CiLZMx8PDw/td3qxQTh73ySby8OJi1oKHh4cX8/Iu0vu8vtLfw8PDw1t31ZMHbhsfJBHt7DD44Xfx8PDwLvBmram2hG3jiaTNVrTQ8PDw8C7w9nXpLJjIg9o2KMHDw8N7DW+fZLSMTcFdRxV4eHh4h3jtUFQyOjC8u8F+6qIZDw8P7wJvUwpvjod8GCsp3OtzDw8PD2/BmzWZ8vbVpjTPb0c0TYaHh4d3lJeUv7PSdnMA5DHuw3Xw8PDwrvHyg2ET6eYxRxt8RDNleHh4eEd5bXu+HZbKI9rZSEGdr+Dh4eEteG000Db+80Miv92zph0eHh7ebd5sBCoqc+PAItn6sOjHw8PDW/DagGDf2j8w45CviYeHh3eZl2+6fYjPYuK2IfcDGA8PD+8CbzZ61T7u23ZaGxP/Z308PDy8o7x805tQIGl9talJ1FrDw8PD+yXerORNYoV2IKAOgvHw8PAu8NoHd9vuyg+JWRm9CiPw8PDw1rx8QCofscqD3dmBFH0LDw8P7zJv9ud/P6rVBhxFhIGHh4d3jdcWu2fjibb9VtxKPDw8vMu8dnObn58B8qMFDw8P7wbvs7zOjlW1rbV6bAsPDw/vAi+/ZgMEZxnJ0TW88PDw8EpeXuC241P7wj1nFzEuHh4e3iFeu+l2CCAfupodWvXHeHh4eC/kbUYBZuMCyegVHh4e3l/hJXHD5lCZFeV4eHh4r+Hljfy29TVjHzsw8PDw8C7wDvzhj5/G+3baAQweHh7enPcFxcRzqERZA84AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
